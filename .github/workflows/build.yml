@@ -58,6 +58,7 @@ jobs:
       - name: Build Yggdrasil.framework
         run: |
           cd yggdrasil-go
+          env
           contrib/mobile/build -i
           cp -R Yggdrasil.framework ..
       - name: Archive
