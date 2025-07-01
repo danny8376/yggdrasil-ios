@@ -62,7 +62,12 @@ jobs:
         run: |
           cd yggdrasil-go
           contrib/mobile/build -i
-          cp -R Yggdrasil.framework ..
+          #cp -R Yggdrasil.framework ..
+      - name: Print Folder Tree
+        uses: jaywcjlove/github-action-folder-tree@main
+        with:
+          path: ./yggdrasil-go
+          depth: 10
       - name: Archive
         env:
           scheme: ${{ steps.scheme.outputs.scheme }}
