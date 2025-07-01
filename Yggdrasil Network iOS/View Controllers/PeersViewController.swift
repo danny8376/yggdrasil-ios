@@ -92,9 +92,11 @@ class PeersViewController: UITableViewController {
 
                     cell.textLabel?.text = uri
                     cell.detailTextLabel?.text = "Connected via \(proto.uppercased()), uptime \(uptime)"
-                    
-                    cell.textLabel?.textColor = .label
-                    cell.detailTextLabel?.textColor = .label
+
+                    if #available(iOS 13.0, *) {
+                        cell.textLabel?.textColor = .label
+                        cell.detailTextLabel?.textColor = .label
+                    }
                 }
             }
             return cell
