@@ -49,6 +49,10 @@ jobs:
           repository: 'yggdrasil-network/yggdrasil-go'
           ref: 'master'
           path: 'yggdrasil-go'
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
       - name: Build Yggdrasil.framework
         run: |
           cd yggdrasil-go
