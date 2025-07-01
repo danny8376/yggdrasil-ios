@@ -9,6 +9,7 @@
 #define BridgedResources_h
 
 #include <stdint.h>
+#import <Foundation/Foundation.h>
 
 // SPDX-License-Identifier: MIT
 // Copyright © 2018-2023 WireGuard LLC. All Rights Reserved.
