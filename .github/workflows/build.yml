@@ -53,12 +53,14 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: "stable"
-      - name: Add Go Path
-        run: echo $(go env GOPATH)/bin >> $GITHUB_PATH
+      - name: Install gomobile & Add Path
+        run: |
+          go install golang.org/x/mobile/cmd/gomobile@latest
+          echo $(go env GOPATH)/bin >> $GITHUB_PATH
+          ls $(go env GOPATH)/bin
       - name: Build Yggdrasil.framework
         run: |
           cd yggdrasil-go
-          env
           contrib/mobile/build -i
           cp -R Yggdrasil.framework ..
       - name: Archive
